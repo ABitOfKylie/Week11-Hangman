@@ -9,6 +9,9 @@ var Letter = require('./letter2.js');
 
 var words = ["pear","apple","pineapple","strawberries"];
 
+var wins = 0;
+var losses = 0;
+
 var HangmanGame = function(){ // turn from obj to constructor.
 	
 	this.wordInPlay = null; // move to method setupGame
@@ -70,7 +73,7 @@ var HangmanGame = function(){ // turn from obj to constructor.
 
 	this.processUpdateTotalGuesses = function() {
 			console.log('processUpdateTotalGuesses.guessesLeft: ', this.lettersOfTheWord);
-		this.totalGuesses = this.lettersOfTheWord.length + 5;
+		this.totalGuesses = this.lettersOfTheWord.length + 2;
 		this.guessesLeft = this.totalGuesses;
 
 		// ---Render the guesses left
@@ -166,11 +169,14 @@ var letsPlay = function(){
 			// 	count = 2;
 			// }else {
 				count++;
+				wins ++;
 				letsPlay();
 			// }
 		})
 	}else {
-		console.log('over');
+		console.log("\n\nYou lost! The word was: " + wordInPlay);
+		losses --;
+
 	}
 }
 

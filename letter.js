@@ -1,4 +1,4 @@
-function Letter (){
+ function Letter (){
 	this.let;
 	this.char;
 	this.appear = false;
