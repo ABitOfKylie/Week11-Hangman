@@ -43,7 +43,7 @@ function setUp() {
     numGuesses = 0;
     blanksNLetters = []; // CRITICAL LINE - here we *reset* the guess and success array at each round. 
     wrongGuesses = []; // CRITICAL LINE - here we *reset* the wrong guesses from the previous round.
-    console.log("You have " + guessesRemaining + "frogs and witches to guess the word.");
+    console.log("You have " + guessesRemaining + "chances left to guess the word.");
     random();
 };
 
